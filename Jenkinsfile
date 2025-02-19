@@ -10,7 +10,11 @@ pipeline {
             }
         }
       stage('testing') {   
-          
+       when {
+         not {
+           branch 'dev'
+         }
+       }
         steps {
                echo "testing"
             }
